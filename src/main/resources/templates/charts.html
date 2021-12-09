@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SURVIVOR AND ROBOT DETAILS</title>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" th:inline="javascript">
+
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChartRobot);
+        google.charts.setOnLoadCallback(drawChartSurvivor);
+
+
+        function drawChartRobot() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'RoboType');
+            data.addColumn('number', 'Robots');
+            data.addRows([
+                /*[# th:each="row : ${chartDataRobot}"]*/
+                [[${row}]],
+                /*[/]*/
+            ]);
+
+            // Set chart options
+            var options = {'title':'Robots per RobotType',
+                'width':400,
+                'height':300};
+            var chart = new google.visualization.PieChart(document.getElementById('chart_robot'));
+            chart.draw(data, options);
+        }
+
+       function drawChartSurvivor() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Survivors');
+            data.addColumn('number', 'Count');
+            data.addRows([
+                /*[# th:each="row : ${chartDataInfection}"]*/
+                [[${row}]],
+                /*[/]*/
+            ]);
+
+            // Set chart options
+            var options = {'title':'Infected vs Non-Infected Survivors',
+                'width':400,
+                'height':300};
+            var chart = new google.visualization.PieChart(document.getElementById('chart_survivor'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+<h1>TRACK DOWN REPORTS</h1>
+<table class="columns">
+    <tr>
+        <td><div id="chart_robot" style="border: 1px solid #ccc"></div></td>
+        <td><div id="chart_survivor" style="border: 1px solid #ccc"></div></td>
+    </tr>
+</table>
+</body>
+</html>
