@@ -6,6 +6,6 @@ This Humo-Sapiens-Survival RestApi is created using Spring boot Web,JPA,Swagger,
 1. mvn clean install 
 2. java -jar .\target\homo-sapiens-survival-0.0.1-SNAPSHOT.jar
 ```
-### Swagger Url
+### API EndPoints and details(Swagger Url)
 ```
 http://localhost:8080/swagger-ui.html#
