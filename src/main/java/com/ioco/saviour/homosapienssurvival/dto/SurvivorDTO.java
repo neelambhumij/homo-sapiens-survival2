@@ -38,13 +38,5 @@ public class SurvivorDTO {
         return this.location = this.latitude + "," + this.longitude ;
     }
 
-    public Survivor populateSurvivor(){
-        Inventory inventory = new Inventory(this.inventoryDTO.isWater(), this.inventoryDTO.isFood(), this.inventoryDTO.isMedication(), this.inventoryDTO.isAmmunition());
-        Survivor survivor = new Survivor(name, age, gender.name(), getLocation());
-        survivor.setInventory(inventory);
-        inventory.setSurvivor(survivor);
-        return survivor;
-    }
-
 
 }

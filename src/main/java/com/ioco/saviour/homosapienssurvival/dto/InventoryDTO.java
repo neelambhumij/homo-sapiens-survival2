@@ -17,6 +17,13 @@ public class InventoryDTO {
 
     private boolean ammunition;
 
+    public InventoryDTO(boolean water, boolean food, boolean medication, boolean ammunition) {
+        this.water = water;
+        this.food = food;
+        this.medication = medication;
+        this.ammunition = ammunition;
+    }
+
     @JsonIgnore
     private Survivor survivor;
 }
