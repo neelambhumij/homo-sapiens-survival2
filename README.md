@@ -9,3 +9,11 @@ This Humo-Sapiens-Survival RestApi is created using Spring boot Web,JPA,Swagger,
 ### API EndPoints and details(Swagger Url)
 ```
 http://localhost:8080/swagger-ui.html#
+```
+
+### Database Console
+```
+http://localhost:8080/h2-ui
+```
+
+
